@@ -37,4 +37,9 @@ describe('Example Class Definition', function () {
     const NormalizedStr = Normalize('Profesor Inglés', { lang: 'ES' });
     expect(NormalizedStr).toEqual(['PROFESOR', 'INGLES']);
   });
+
+  test('Should ignore articles', function () {
+    const NormalizedStr = Normalize('Profesor de Inglés', { lang: 'ES' });
+    expect(NormalizedStr).toEqual(['PROFESOR', 'INGLES']);
+  });
 });
