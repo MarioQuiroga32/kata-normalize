@@ -27,4 +27,9 @@ describe('Example Class Definition', function () {
     const NormalizedStr = Normalize('Cocinero', { lang: 'ES' });
     expect(NormalizedStr).toEqual(['COCINERO']);
   });
+
+  test('Should transform a string with more than one word to upper case', function () {
+    const NormalizedStr = Normalize('Cocinero Cocinero', { lang: 'ES' });
+    expect(NormalizedStr).toEqual(['COCINERO', 'COCINERO']);
+  });
 });
