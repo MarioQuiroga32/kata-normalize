@@ -32,4 +32,9 @@ describe('Example Class Definition', function () {
     const NormalizedStr = Normalize('Cocinero Cocinero', { lang: 'ES' });
     expect(NormalizedStr).toEqual(['COCINERO', 'COCINERO']);
   });
+
+  test('Should ignore diacritics', function () {
+    const NormalizedStr = Normalize('Profesor Inglés', { lang: 'ES' });
+    expect(NormalizedStr).toEqual(['PROFESOR', 'INGLES']);
+  });
 });
